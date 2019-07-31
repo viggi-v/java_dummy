@@ -6,6 +6,8 @@ import com.visa.prj.entity.Mobile;
 import com.visa.prj.entity.Product;
 import com.visa.prj.entity.TV;
 
+import com.visa.prj.util.Utility;
+
 public class ProductClient {
 
 	public static void main(String[] args) {
@@ -15,9 +17,12 @@ public class ProductClient {
 		products[2] = new TV(634,"Onida Thunder",3500.00,"CRT");
 		products[3] = new Mobile(621, "iPhone XR", 99999.00, "4G");
 		products[4] = new Mobile(844, "Oppo", 9999.00, "4G");
-		
+		Utility.sort(products);
+		for (Product product : products) {
+			System.out.println(product.getClass().getName() + " " + product.getName());
+		}
 		printExpensive(products);
-		//printInfo(products);
+		printInfo(products);
 		printInfoOCP(products);
 		
 	}
